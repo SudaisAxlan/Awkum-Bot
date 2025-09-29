@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudais Bot</title>
+    <title>AWKUM CS Bot</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%231135A6;stop-opacity:1'/><stop offset='100%' style='stop-color:%234A6CD4;stop-opacity:1'/></linearGradient></defs><circle cx='16' cy='16' r='16' fill='url(#grad)'/><text x='16' y='20' font-family='Roboto, sans-serif' font-size='14' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>SA</text></svg>"
-        type="image/svg+xml">
-    <link rel="apple-touch-icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%231135A6;stop-opacity:1'/><stop offset='100%' style='stop-color:%234A6CD4;stop-opacity:1'/></linearGradient></defs><circle cx='16' cy='16' r='16' fill='url(#grad)'/><text x='16' y='20' font-family='Roboto, sans-serif' font-size='14' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>SA</text></svg>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://awkum.edu.pk/wp-content/uploads/2020/03/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://awkum.edu.pk/wp-content/uploads/2020/03/favicon.png">
     <style>
         body {
             background-color: #f4f4f5;
@@ -29,15 +25,15 @@
 
         .sidebar {
             width: 260px;
-            background-color: #202123;
-            color: #d1d5db;
+            background-color: #1a4d2e; /* AWKUM green */
+            color: #ffffff;
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             overflow-y: auto;
             scrollbar-width: thin;
-            scrollbar-color: #4b4b4b #202123;
+            scrollbar-color: #d4af37 #1a4d2e; /* Gold scrollbar for AWKUM theme */
         }
 
         .sidebar::-webkit-scrollbar {
@@ -45,11 +41,11 @@
         }
 
         .sidebar::-webkit-scrollbar-track {
-            background: #202123;
+            background: #1a4d2e;
         }
 
         .sidebar::-webkit-scrollbar-thumb {
-            background: #4b4b4b;
+            background: #d4af37;
             border-radius: 3px;
         }
 
@@ -90,15 +86,15 @@
 
         .user-message {
             margin-left: auto;
-            background-color: #ececf1;
-            color: #343541;
+            background-color: #e6f4e6; /* Light green for AWKUM theme */
+            color: #1a4d2e;
             padding: 1rem;
             border-radius: 12px 12px 0 12px;
         }
 
         .ai-message {
             background-color: #f7f7f8;
-            color: #343541;
+            color: #1a4d2e;
             padding: 1rem;
             border-radius: 12px 12px 12px 0;
         }
@@ -118,17 +114,17 @@
             font-size: 1rem;
             line-height: 1.5;
             transition: border-color 0.2s;
-            color: #343541;
+            color: #1a4d2e;
         }
 
         .input-area textarea:focus {
             outline: none;
-            border-color: #4b4b4b;
-            box-shadow: 0 0 0 2px rgba(75, 75, 75, 0.2);
+            border-color: #d4af37; /* AWKUM gold */
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
         }
 
         .send-button {
-            background-color: #343541;
+            background-color: #1a4d2e; /* AWKUM green */
             color: #ffffff;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
@@ -136,7 +132,7 @@
         }
 
         .send-button:hover {
-            background-color: #2a2b32;
+            background-color: #2a6b3f;
         }
 
         .clear-button {
@@ -152,7 +148,7 @@
         }
 
         .new-chat-button {
-            background-color: #343541;
+            background-color: #1a4d2e; /* AWKUM green */
             color: #ffffff;
             padding: 0.75rem;
             border-radius: 8px;
@@ -160,16 +156,16 @@
         }
 
         .new-chat-button:hover {
-            background-color: #2a2b32;
+            background-color: #2a6b3f;
         }
 
         .sidebar-link {
-            color: #d1d5db;
+            color: #ffffff;
             transition: color 0.2s;
         }
 
         .sidebar-link:hover {
-            color: #ffffff;
+            color: #d4af37; /* AWKUM gold */
         }
 
         .link-item {
@@ -180,12 +176,12 @@
         }
 
         .link-item i {
-            color: #6b7280;
+            color: #d4af37; /* AWKUM gold */
         }
 
         .logo {
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
         }
 
         @keyframes fadeIn {
@@ -193,7 +189,6 @@
                 opacity: 0;
                 transform: translateY(10px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -201,25 +196,14 @@
         }
     </style>
 </head>
-
 <body>
     <div class="chat-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div>
                 <div class="flex items-center gap-2 mb-4">
-                    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                        <defs>
-                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#6b7280;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="50" cy="50" r="50" fill="url(#grad)" /><text x="50" y="65"
-                            font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="#ffffff"
-                            text-anchor="middle" dominant-baseline="middle">SA</text>
-                    </svg>
-                    <h1 class="text-lg font-semibold">Sudais Bot</h1>
+                    <img src="https://awkum.edu.pk/wp-content/uploads/2020/03/favicon.png" alt="AWKUM Logo" class="logo">
+                    <h1 class="text-lg font-semibold">AWKUM CS Bot</h1>
                 </div>
                 <button id="newChatBtn" class="new-chat-button flex items-center gap-2">
                     <i class="fas fa-plus"></i> New Chat
@@ -229,17 +213,15 @@
                 <div class="space-y-2">
                     <div class="link-item">
                         <i class="fas fa-globe text-sm"></i>
-                        <a href="https://www.sudaisazlan.pro/" target="_blank"
-                            class="sidebar-link text-xs">Portfolio</a>
+                        <a href="https://awkum.edu.pk/" target="_blank" class="sidebar-link text-xs">AWKUM Website</a>
                     </div>
                     <div class="link-item">
-                        <i class="fab fa-github text-sm"></i>
-                        <a href="https://github.com/SudaisAxlan" target="_blank" class="sidebar-link text-xs">GitHub</a>
+                        <i class="fas fa-university text-sm"></i>
+                        <a href="https://awkum.edu.pk/faculties-colleges/faculty-of-physical-numerical-sciences/cs-garden/" target="_blank" class="sidebar-link text-xs">CS Department</a>
                     </div>
                     <div class="link-item">
                         <i class="fas fa-envelope text-sm"></i>
-                        <a href="mailto:sudaisazlan09@gmail.com"
-                            class="sidebar-link text-xs">sudaisazlan09@gmail.com</a>
+                        <a href="mailto:cs@awkum.edu.pk" class="sidebar-link text-xs">cs@awkum.edu.pk</a>
                     </div>
                 </div>
             </div>
@@ -252,15 +234,11 @@
                 <!-- Welcome Message -->
                 <div class="message ai-message">
                     <div class="flex items-center gap-2 mb-1">
-                        <span class="font-semibold text-gray-800">Sudais Bot</span>
-                        <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded-full">ChatGPT-4 API</span>
+                        <span class="font-semibold text-gray-800">AWKUM CS Bot</span>
+                        <span class="bg-green-700 text-white text-xs px-2 py-1 rounded-full">AI-Powered</span>
                     </div>
                     <p class="text-gray-700">
-                        Sudais Bot by Sudais Azlan: Boost your performance with insights from <a
-                            href="https://www.sudaisazlan.pro/" target="_blank"
-                            class="text-blue-600 underline hover:text-blue-800">sudaisazlan.pro</a> and <a
-                            href="https://github.com/SudaisAxlan" target="_blank"
-                            class="text-blue-600 underline hover:text-blue-800">GitHub</a>.
+                        Welcome to AWKUM CS Bot! Ask me anything about the Department of Computer Science at Abdul Wali Khan University Mardan, including programs, faculty, labs, admissions, or research. Learn more at <a href="https://awkum.edu.pk/faculties-colleges/faculty-of-physical-numerical-sciences/cs-garden/" target="_blank" class="text-green-700 underline hover:text-green-900">CS Department</a> or <a href="https://awkum.edu.pk/" target="_blank" class="text-green-700 underline hover:text-green-900">AWKUM</a>.
                     </p>
                 </div>
             </div>
@@ -268,8 +246,7 @@
             <!-- Input Area -->
             <div class="input-area">
                 <div class="relative flex items-center">
-                    <textarea id="userInput" rows="2" placeholder="Ask me anything about performance enhancement..."
-                        class="pr-24"></textarea>
+                    <textarea id="userInput" rows="2" placeholder="Ask about AWKUM's Computer Science programs, faculty, labs, or anything else..." class="pr-24"></textarea>
                     <div class="absolute right-2 flex items-center gap-2">
                         <button id="clearBtn" class="clear-button" title="Clear conversation">
                             <i class="fas fa-trash-alt text-sm"></i>
@@ -316,8 +293,8 @@
                 responseDiv.className = 'message ai-message';
                 responseDiv.innerHTML = `
                     <div class="flex items-center gap-2 mb-1">
-                        <span class="font-semibold text-gray-800">Sudais Bot</span>
-                        <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                        <span class="font-semibold text-gray-800">AWKUM CS Bot</span>
+                        <span class="bg-green-700 text-white text-xs px-2 py-1 rounded-full flex items-center">
                             <i class="fas fa-check-circle mr-1 text-xs"></i> AI Response
                         </span>
                     </div>
@@ -365,7 +342,7 @@
                         addAIResponse("Something went wrong. Please try again.");
                         userInput.disabled = false;
                         sendBtn.disabled = false;
-                        sendBtn.innerHTML = '<i class="fas fa-rocket mr-2"></i> Elevate My Performance';
+                        sendBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Send';
                     });
             });
 
@@ -388,11 +365,11 @@
                 chatHistory.innerHTML = `
                     <div class="message ai-message">
                         <div class="flex items-center gap-2 mb-1">
-                            <span class="font-semibold text-gray-800">Sudais Bot</span>
-                            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded-full">ChatGPT-4 API</span>
+                            <span class="font-semibold text-gray-800">AWKUM CS Bot</span>
+                            <span class="bg-green-700 text-white text-xs px-2 py-1 rounded-full">AI-Powered</span>
                         </div>
                         <p class="text-gray-700">
-                            Sudais Bot by Sudais Azlan: Boost your performance with insights from <a href="https://www.sudaisazlan.pro/" target="_blank" class="text-blue-600 underline hover:text-blue-800">sudaisazlan.pro</a> and <a href="https://github.com/SudaisAxlan" target="_blank" class="text-blue-600 underline hover:text-blue-800">GitHub</a>.
+                            Welcome to AWKUM CS Bot! Ask me anything about the Department of Computer Science at Abdul Wali Khan University Mardan, including programs, faculty, labs, admissions, or research. Learn more at <a href="https://awkum.edu.pk/faculties-colleges/faculty-of-physical-numerical-sciences/cs-garden/" target="_blank" class="text-green-700 underline hover:text-green-900">CS Department</a> or <a href="https://awkum.edu.pk/" target="_blank" class="text-green-700 underline hover:text-green-900">AWKUM</a>.
                         </p>
                     </div>
                 `;
@@ -402,5 +379,4 @@
         });
     </script>
 </body>
-
 </html>
